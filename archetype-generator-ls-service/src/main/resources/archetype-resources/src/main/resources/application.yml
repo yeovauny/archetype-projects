@@ -1,0 +1,30 @@
+spring:
+  cloud:
+     discovery:
+        enabled: false
+     config:
+        enabled: false
+
+server:
+  servlet:
+    context-path: /${serviceName}
+  port : 8030
+
+#cors configurations
+cors:
+  allowedOrigins: "https://localhost:8030"
+
+#actuator configurations
+management:
+  endpoints:
+    health:
+      enabled: true
+    info:
+      enabled: true
+    web:
+      base-path: /actuator
+      exposure:
+        include: health, info
+
+
+#https://enmilocalfunciona.io/por-que-utilizar-arquetipos-maven/
